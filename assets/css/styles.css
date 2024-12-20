@@ -32,12 +32,14 @@
 
 .nav-link {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 15px;
+  text-align: right;
 }
 
 .nav-link:hover {
-  color: #000;
+  opacity: 0.5;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 1920px) {
@@ -119,4 +121,102 @@
 
 .scroll-down:hover span {
   display: inline-block;
+}
+
+/* General Section Styling */
+#about, #services {
+  background: url("/assets/images/augusto-test.png") no-repeat center center/cover;
+  background-color: black; /* Black background */
+  height: 100vh; /* Match the height of the hero section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding for better spacing on smaller screens */
+}
+
+/* Card Styling for Sobre and Serviços */
+#about .card, #services .card {
+  background-color: #2f2f2f; /* Graphite color */
+  opacity: 0.9; /* Reduce opacity slightly */
+  color: white; /* Ensure text remains visible */
+  padding: 20px;
+  border: none; /* Remove card border */
+  border-radius: 10px; /* Smooth edges */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  height: 400px;
+  max-height: 600px;
+  max-width: 200px; /* Limit card width */
+  width: 50%; /* Allow flexibility for smaller screens */
+  text-align: center; /* Center the text */
+  position: relative; /* Ensure arrows don't overlap */
+  z-index: 1; /* Keeps the box above other elements */
+}
+
+/* Carousel Controls (Arrows) */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Reduce the size of the clickable area */
+  z-index: 2; /* Ensure controls are above background but below cards */
+  top: 50%; /* Vertically center the arrows */
+  transform: translateY(-50%); /* Correct centering */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.0); /* Semi-transparent background for better visibility */
+  border-radius: 50%; /* Circle-shaped arrows */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about, #services {
+      height: auto; /* Allow sections to adjust height for smaller screens */
+  }
+
+  #about .card, #services .card {
+      max-width: 90%; /* Reduce card width slightly for small screens */
+      padding: 15px; /* Adjust padding for better spacing */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+      width: 10%; /* Expand clickable area slightly for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #about .card, #services .card {
+      font-size: 14px; /* Reduce font size for very small screens */
+  }
+}
+
+/* Bottom Arrow Styling */
+.bottom-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-arrow:hover {
+  opacity: 1; /* Brighten on hover */
+}
+
+.bottom-arrow i {
+  animation: bounce 1.5s infinite; /* Add a subtle bounce animation */
+  color: red;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
 }
