@@ -1,26 +1,9 @@
-// // Smooth scrolling for the bottom arrows
-// document.querySelectorAll('.bottom-arrow').forEach(arrow => {
-//     arrow.addEventListener('click', function (event) {
-//         event.preventDefault(); // Prevent default anchor behavior
-//         const targetId = this.getAttribute('href');
-//         const targetElement = document.querySelector(targetId);
-
-//         if (targetElement) {
-//             targetElement.scrollIntoView({
-//                 behavior: 'smooth' // Smooth scroll animation
-//             });
-//         }
-//     });
-// });
-
-
 function scrollToNextSection(event) {
     event.preventDefault();
+    const targetId = event.currentTarget.getAttribute('data-target');
+    const targetSection = document.querySelector(targetId);
 
-    var currentSection = event.target.closest('.section');
-    var nextSection = currentSection.nextElementSibling;
-
-    if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
+    if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
     }
 }
