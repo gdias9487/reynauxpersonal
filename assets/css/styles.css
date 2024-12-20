@@ -124,7 +124,7 @@
 }
 
 /* General Section Styling */
-#about, #services {
+#about, #services, #contact {
   background: url("/assets/images/augusto-test.png") no-repeat center center/cover;
   background-color: black; /* Black background */
   height: 100vh; /* Match the height of the hero section */
@@ -169,7 +169,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  #about, #services {
+  #about, #services, #contact {
       height: auto; /* Allow sections to adjust height for smaller screens */
   }
 
@@ -201,6 +201,7 @@
   color: white;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja visível acima do conteúdo */
 }
 
 .bottom-arrow:hover {
@@ -212,6 +213,11 @@
   color: red;
 }
 
+.bottom-arrow-up i {
+  animation: bounce 1.5s infinite; /* Remova a animação de bounce se preferir */
+  color: red; /* Mude a cor para distinguir da seta para baixo */
+}
+
 @keyframes bounce {
   0%, 100% {
       transform: translateY(0);
@@ -219,4 +225,12 @@
   50% {
       transform: translateY(-10px);
   }
+}
+
+/* Correção para posicionamento das setas */
+.hero-section,
+#about,
+#services,
+#contact {
+  position: relative; /* Garante que as setas sejam relativas à seção pai */
 }
