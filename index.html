@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Trainer</title>
+    <title>Reynaux Personal</title>
     <script src="scripts.js" defer></script>
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="/assets/images/favicon.ico"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -43,9 +51,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#services">Serviços</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contato</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -57,8 +62,13 @@
         <div class="container text-center">
           <h1>Consultoria online e presencial</h1>
           <div class="hero-buttons">
-            <a href="#about" class="bottom-arrow" data-target="#about" onclick="scrollToNextSection(event)">
-                <i class="fas fa-chevron-down"></i>
+            <a
+              href="#about"
+              class="bottom-arrow"
+              data-target="#about"
+              onclick="scrollToNextSection(event)"
+            >
+              <i class="fas fa-chevron-down"></i>
             </a>
           </div>
         </div>
@@ -69,49 +79,60 @@
     <section id="about" class="py-5">
       <div class="container text-center">
         <h2 class="mb-4">Sobre</h2>
-        <!-- <p class="mb-5">
-          Conheça mais sobre os valores e missão do Reynaux Personal!
-        </p> -->
-        <a href="#services" class="bottom-arrow" data-target="#services" onclick="scrollToNextSection(event)">
-            <i class="fas fa-chevron-down"></i>
+        <a
+          href="#services"
+          class="bottom-arrow"
+          data-target="#services"
+          onclick="scrollToNextSection(event)"
+        >
+          <i class="fas fa-chevron-down"></i>
         </a>
         <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <!-- Carousel Item 1 -->
-            <div class="carousel-item active">
-              <div class="card mx-auto" style="max-width: 600px">
-                <div class="card-body">
-                  <h5 class="card-title">Missão</h5>
-                  <p class="card-text">
-                    Ajudar pessoas a alcançarem seus objetivos de saúde e
-                    bem-estar através de treinos personalizados e motivação
-                    contínua.
-                  </p>
-                </div>
+            <div
+              class="carousel-item active"
+              style="background-image: url('/assets/images/test1.jpg')"
+            >
+              <div
+                class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              >
+                <h3 class="text-uppercase">Missão</h3>
+                <p>
+                  Ajudar pessoas a alcançarem seus objetivos de saúde e
+                  bem-estar através de treinos personalizados e motivação
+                  contínua.
+                </p>
               </div>
             </div>
             <!-- Carousel Item 2 -->
-            <div class="carousel-item">
-              <div class="card mx-auto" style="max-width: 600px">
-                <div class="card-body">
-                  <h5 class="card-title">Valores</h5>
-                  <p class="card-text">
-                    Compromisso, empatia e excelência são os pilares que
-                    norteiam meu trabalho como personal trainer.
-                  </p>
-                </div>
+            <div
+              class="carousel-item"
+              style="background-image: url('/assets/images/test2.jpg')"
+            >
+              <div
+                class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              >
+                <h3 class="text-uppercase">Valores</h3>
+                <p>
+                  Compromisso, empatia e excelência são os pilares que norteiam
+                  meu trabalho como personal trainer.
+                </p>
               </div>
             </div>
             <!-- Carousel Item 3 -->
-            <div class="carousel-item">
-              <div class="card mx-auto" style="max-width: 600px">
-                <div class="card-body">
-                  <h5 class="card-title">Visão</h5>
-                  <p class="card-text">
-                    Ser referência em consultoria fitness, promovendo mudanças
-                    duradouras na vida dos meus clientes.
-                  </p>
-                </div>
+            <div
+              class="carousel-item"
+              style="background-image: url('/assets/images/test3.jpg')"
+            >
+              <div
+                class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              >
+                <h3 class="text-uppercase">Visão</h3>
+                <p>
+                  Ser referência em consultoria fitness, promovendo mudanças
+                  duradouras na vida dos meus clientes.
+                </p>
               </div>
             </div>
           </div>
@@ -154,42 +175,80 @@
           </div>
         </div>
       </div>
-      <a href="#contact" class="bottom-arrow" data-target="#contact" onclick="scrollToNextSection(event)">
-        <i class="fas fa-chevron-down"></i>
-    </a>
-    </section>
-
-    <!-- Contato Section -->
-    <section id="contact" class="py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="mb-4">Contato</h2>
-        <p class="mb-4">
-          Entre em contato comigo pelas redes sociais ou envie uma mensagem
-          diretamente no WhatsApp!
-        </p>
-        <div class="d-flex justify-content-center align-items-center">
-          <!-- Instagram Badge -->
-          <a
-            href="https://www.instagram.com/seu_perfil"
-            target="_blank"
-            class="btn btn-outline-primary me-3"
-          >
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-          <!-- WhatsApp Badge -->
-          <a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            class="btn btn-success"
-          >
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-      <a href="#hero" class="bottom-arrow bottom-arrow-up" data-target="#hero" onclick="scrollToNextSection(event)">
+      <a
+        href="#hero"
+        class="bottom-arrow bottom-arrow-up"
+        data-target="#hero"
+        onclick="scrollToNextSection(event)"
+      >
         <i class="fas fa-chevron-up"></i>
       </a>
     </section>
+
+    <!-- Planos Section -->
+    <section id="planos" class="py-5">
+      <div class="container text-center">
+        <h2 class="mb-4">Planos</h2>
+        <div class="row justify-content-center">
+          <!-- Plano Bimestral -->
+          <div class="col-md-4">
+            <div class="plan-card shadow">
+              <h3 class="plan-title">Bimestral</h3>
+              <p class="plan-price">R$175</p>
+              <ul class="plan-features">
+                <li>Treinos periódicos</li>
+                <li>Acompanhamento remoto e presencial</li>
+                <li>Duração de 2 meses</li>
+              </ul>
+              <a href="https://wa.me/5581987736688?text=Ola,%20gostaria%20de%20assinar%20o%20plano%20bimestral!" class="btn btn-primary">Assinar</a>
+            </div>
+          </div>
+          <!-- Plano Mensal -->
+          <div class="col-md-4">
+            <div class="plan-card shadow">
+              <h3 class="plan-title">Mensal</h3>
+              <p class="plan-price">R$90</p>
+              <ul class="plan-features">
+                <li>Treinos periódicos</li>
+                <li>Acompanhamento remoto e presencial</li>
+                <li>Duração de 1 mês</li>
+              </ul>
+              <a href="https://wa.me/5581987736688?text=Ola,%20gostaria%20de%20assinar%20o%20plano%20mensal!" class="btn btn-primary">Assinar</a>
+            </div>
+          </div>
+          <!-- Plano Trimestral -->
+          <div class="col-md-4">
+            <div class="plan-card shadow">
+              <h3 class="plan-title">Trimestral</h3>
+              <p class="plan-price">R$270</p>
+              <ul class="plan-features">
+                <li>Treinos periódicos</li>
+                <li>Acompanhamento remoto e presencial</li>
+                <li>Duração de 3 meses</li>
+              </ul>
+              <a href="https://wa.me/5581987736688?text=Ola,%20gostaria%20de%20assinar%20o%20plano%20trimestral!" class="btn btn-primary">Assinar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="floating-balloons">
+      <a
+        href="https://wa.me/+5581987736688"
+        target="_blank"
+        class="floating-balloon whatsapp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/reynauxpersonal/"
+        target="_blank"
+        class="floating-balloon instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
