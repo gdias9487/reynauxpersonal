@@ -1,3 +1,10 @@
+body {
+  font-family: "Orbitron";
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 /* Top Bar */
 .top-bar {
   background-color: #f8e9e8;
@@ -61,7 +68,7 @@
     /* Hero Section */
     .hero-section {
     height: 100vh;
-    background: url("/assets/images/test (2).png") no-repeat center center/cover;
+    background: url("/assets/images/hero-bg.png") no-repeat center center/cover;
     background-size: cover;
     position: relative;
     color: white;
@@ -152,19 +159,36 @@
   z-index: 1; /* Keeps the box above other elements */
 }
 
-/* Carousel Controls (Arrows) */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%; /* Reduce the size of the clickable area */
-  z-index: 2; /* Ensure controls are above background but below cards */
-  top: 50%; /* Vertically center the arrows */
-  transform: translateY(-50%); /* Correct centering */
+#aboutCarousel .carousel-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#aboutCarousel .carousel-caption {
+  position: absolute;
+  bottom: 20%;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+#aboutCarousel h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#aboutCarousel p {
+  font-size: 1.2rem;
+  max-width: 600px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.0); /* Semi-transparent background for better visibility */
-  border-radius: 50%; /* Circle-shaped arrows */
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
 /* Responsive Design */
@@ -210,12 +234,12 @@
 
 .bottom-arrow i {
   animation: bounce 1.5s infinite; /* Add a subtle bounce animation */
-  color: red;
+  color: white;
 }
 
 .bottom-arrow-up i {
   animation: bounce 1.5s infinite; /* Remova a animação de bounce se preferir */
-  color: red; /* Mude a cor para distinguir da seta para baixo */
+  color: white; /* Mude a cor para distinguir da seta para baixo */
 }
 
 @keyframes bounce {
@@ -233,4 +257,135 @@
 #services,
 #contact {
   position: relative; /* Garante que as setas sejam relativas à seção pai */
+}
+
+/* Planos Section */
+#planos {
+  position: relative; /* Garante que as setas sejam relativas à seção pai */
+  background-color: #222; /* Fundo claro */
+  padding: 60px 0;
+}
+
+#planos h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.plan-card {
+  background: #555;
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.plan-card:hover {
+  border-color: #ffd700; /* Borda amarela ao passar o mouse */
+  transform: scale(1.03); /* Aumenta ligeiramente o card */
+}
+
+
+.plan-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+  font-family: "Orbitron";
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.plan-price {
+  font-size: 2rem;
+  color: #f5f5f5; /* Cor do preço */
+  margin-bottom: 20px;
+  font-family: "Orbitron";
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan-features li {
+  font-size: 1rem;
+  color: white;
+  margin: 10px 0;
+  font-family: "Ysabeau SC";
+  font-optical-sizing: auto;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.plan-card .btn {
+  background-color: #001d45;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card .btn:hover {
+  transform: scale(1.1); /* Expande ligeiramente o botão */
+  background-color: #8d0f10;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave */
+}
+
+.plan-card .btn-warning {
+  background-color: #ffc107;
+  border: none;
+  color: #333;
+}
+
+
+
+/* Container dos balões flutuantes */
+.floating-balloons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000; /* Garantir que fique acima de outros elementos */
+}
+
+/* Estilo dos balões */
+.floating-balloon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  color: white; /* Cor padrão dos ícones */
+  background-color: #333; /* Cor neutra para os balões */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-balloon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do WhatsApp */
+.floating-balloon.whatsapp i {
+  color: #ffffff; /* Branco */
+}
+
+/* Estilo do Instagram */
+.floating-balloon.instagram i {
+  color: #ffffff; /* Branco */
 }
