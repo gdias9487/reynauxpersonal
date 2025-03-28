@@ -2,7 +2,10 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#ff1744" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>AR Personal Trainer</title>
     <script src="scripts.js" defer></script>
     <link
@@ -39,17 +42,17 @@
         <p>PERSONAL<br>TRAINER</p>
       </div>
       <ul class="nav-links">
-        <li><a href="#main" class="active">INÍCIO</a></li>
-        <li><a href="#about">SOBRE MIM</a></li>
-        <li><a href="#services">SERVIÇOS</a></li>
-        <li><a href="#prices">PREÇOS</a></li>
-        <li><a href="#results">RESULTADOS</a></li>
-        <li><a href="#contact">CONTATO</a></li>
-        <li><a href="#buy">COMPRAR</a></li>
+        <li><a href="#main" class="active"><i class="fas fa-home"></i><span>INÍCIO</span></a></li>
+        <li><a href="#about"><i class="fas fa-user"></i><span>SOBRE MIM</span></a></li>
+        <li><a href="#services"><i class="fas fa-dumbbell"></i><span>SERVIÇOS</span></a></li>
+        <li><a href="#prices"><i class="fas fa-tag"></i><span>PREÇOS</span></a></li>
+        <li><a href="#results"><i class="fas fa-chart-line"></i><span>RESULTADOS</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i><span>CONTATO</span></a></li>
+        <li><a href="#buy"><i class="fas fa-shopping-cart"></i><span>COMPRAR</span></a></li>
       </ul>
       <div class="social-links">
-        <a href="https://wa.me/5581987736688"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/artrainer"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5581987736688" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/reynauxpersonal" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </nav>
 
@@ -58,7 +61,7 @@
       <div class="hero-content">
         <h1>PERSONAL<br>TRAINER</h1>
         <h2>Augusto Reynaux</h2>
-        <a href="#about" class="btn-know-more" onclick="document.querySelector('.nav-links a.active').classList.remove('active'); document.querySelector('.nav-links a[href=\'#about\']').classList.add('active');">CONHEÇA MAIS</a>
+        <a href="#about" class="btn-know-more">CONHEÇA MAIS</a>
       </div>
     </main>
 
@@ -93,19 +96,34 @@
           <h2>SERVIÇOS</h2>
           <div class="services-grid">
             <div class="service-card">
-              <i class="fas fa-dumbbell"></i>
-              <h3>Treino Personalizado</h3>
-              <p>Programas de treino adaptados às suas necessidades e objetivos específicos.</p>
+              <div class="service-card-front">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Treino Personalizado</h3>
+              </div>
+              <div class="service-card-back">
+                <i class="fas fa-dumbbell"></i>
+                <p>Treinos exclusivos desenvolvidos para seus objetivos, considerando sua rotina e condicionamento. Inclui planilhas detalhadas, ajustes periódicos e técnicas avançadas de treino.</p>
+              </div>
             </div>
             <div class="service-card">
-              <i class="fas fa-apple-alt"></i>
-              <h3>Consultoria Nutricional</h3>
-              <p>Orientação nutricional para otimizar seus resultados e melhorar sua saúde.</p>
+              <div class="service-card-front">
+                <i class="fas fa-tape"></i>
+                <h3>Avaliação Física</h3>
+              </div>
+              <div class="service-card-back">
+                <i class="fas fa-tape"></i>
+                <p>Avaliação completa incluindo medidas antropométricas, % de gordura, massa muscular, testes de força e resistência. Acompanhamento mensal da sua evolução com relatórios detalhados.</p>
+              </div>
             </div>
             <div class="service-card">
-              <i class="fas fa-running"></i>
-              <h3>Acompanhamento Online</h3>
-              <p>Suporte contínuo e ajustes do seu programa de treino à distância.</p>
+              <div class="service-card-front">
+                <i class="fas fa-running"></i>
+                <h3>ACOMPANHAMENTO ONLINE E PRESENCIAL</h3>
+              </div>
+              <div class="service-card-back">
+                <i class="fas fa-running"></i>
+                <p>Treinos personalizados através do app Mfit, com suporte via WhatsApp, vídeos explicativos dos exercícios e ajustes semanais. Acompanhamento presencial disponível para Jaboatão Centro/PE. Treine onde e quando quiser com flexibilidade total.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -116,33 +134,86 @@
     <section id="prices" class="prices-section">
       <div class="section-content">
         <div class="section-text">
-          <h2>Planos Para Todos</h2>
-          <p>Escolha o plano que melhor se adapta aos seus objetivos e comece sua transformação hoje mesmo.</p>
-          <div class="price-cards">
-            <div class="price-card">
-              <h3>MENSAL</h3>
-              <div class="price">R$ 100<span>/mês</span></div>
-              <ul>
-                <li>Treinos personalizados via app Mfit</li>
-                <li>Suporte via WhatsApp</li>
-                <li>Avaliação semanal com fotos</li>
-                <li>Formulário de feedback semanal</li>
-                <li>Anamnese completa inicial</li>
-              </ul>
-              <a href="#buy" class="btn-price">COMEÇAR AGORA</a>
+          <h2>PREÇOS</h2>
+          <div class="price-toggle">
+            <button class="toggle-btn active" data-target="plans">PLANOS</button>
+            <button class="toggle-btn" data-target="single">AVULSOS</button>
+          </div>
+          <div class="cards-wrapper">
+            <div class="price-cards active">
+              <div class="price-card">
+                <h3>BÁSICO</h3>
+                <div class="price">R$ 90<span>/mês</span></div>
+                <ul>
+                  <li>Treino personalizado</li>
+                  <li>Ajustes quinzenais</li>
+                  <li>Planilha de treino personalizada</li>
+                  <li>Avaliação física inicial</li>
+                  <li>Acompanhamento através do app MFit</li>
+                </ul>
+                <a href="#buy" class="btn-price">CONTRATAR</a>
+              </div>
+              <div class="price-card">
+                <h3>PREMIUM</h3>
+                <div class="price">R$&nbsp;200<span>/mês</span></div>
+                <ul>
+                  <li>Treino personalizado</li>
+                  <li>Ajustes semanais</li>
+                  <li>Suporte diário</li>
+                  <li>Análise de vídeos dos exercícios</li>
+                  <li>Avaliação física quinzenal</li>
+                  <li>Acompanhamento através do app MFit</li>
+                </ul>
+                <a href="#buy" class="btn-price">CONTRATAR</a>
+              </div>
+              <div class="price-card featured">
+                <h3>INTERMEDIÁRIO</h3>
+                <div class="price">R$&nbsp;150<span>/mês</span></div>
+                <ul>
+                  <li>Treino personalizado</li>
+                  <li>Feedback por vídeo</li>
+                  <li>Ajustes semanais</li>
+                  <li>Avaliação física mensal</li>
+                  <li>Suporte prioritário</li>
+                  <li>Acompanhamento através do app MFit</li>
+                </ul>
+                <a href="#buy" class="btn-price">CONTRATAR</a>
+              </div>
             </div>
-            <div class="price-card featured">
-              <h3>BIMESTRAL</h3>
-              <div class="price">R$ 190<span>/2 meses</span></div>
-              <ul>
-                <li>Treinos personalizados via app Mfit</li>
-                <li>Suporte via WhatsApp</li>
-                <li>Avaliação semanal com fotos</li>
-                <li>Formulário de feedback semanal</li>
-                <li>Anamnese completa inicial</li>
-                <li>Economia de R$ 10,00/mês</li>
-              </ul>
-              <a href="#buy" class="btn-price">COMEÇAR AGORA</a>
+            <div class="single-services">
+              <div class="single-service-card">
+                <h3>TREINO ÚNICO PERSONALIZADO</h3>
+                <div class="price">R$ 60</div>
+                <ul>
+                  <li>Treino personalizado completo</li>
+                  <li>1 ajuste gratuito</li>
+                  <li>Suporte via WhatsApp</li>
+                  <li>Vídeos explicativos</li>
+                </ul>
+                <a href="#buy" class="btn-price">CONTRATAR</a>
+              </div>
+              <div class="single-service-card">
+                <h3>PACK 3 TREINOS</h3>
+                <div class="price">R$ 150</div>
+                <ul>
+                  <li>3 treinos personalizados</li>
+                  <li>Ajustes para cada treino</li>
+                  <li>Suporte via WhatsApp</li>
+                  <li>Vídeos explicativos</li>
+                </ul>
+                <a href="#buy" class="btn-price">CONTRATAR</a>
+              </div>
+              <div class="single-service-card">
+                <h3>CONSULTA ESTRATÉGICA</h3>
+                <div class="price">R$ 70</div>
+                <ul>
+                  <li>30 minutos de consultoria</li>
+                  <li>Planejamento personalizado</li>
+                  <li>Dicas específicas</li>
+                  <li>Material de apoio</li>
+                </ul>
+                <a href="#buy" class="btn-price">CONTRATAR</a>
+              </div>
             </div>
           </div>
         </div>
@@ -191,7 +262,7 @@
               </div>
               <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <p>contato@artrainer.com</p>
+                <p>reynauxfitness@gmail.com</p>
               </div>
               <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
@@ -306,39 +377,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Atualiza a classe active no menu ao clicar
-      document.querySelectorAll('.nav-links a').forEach(link => {
+      document.querySelectorAll('.nav-links a, .btn-know-more').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
-          document.querySelector('.nav-links a.active').classList.remove('active');
-          this.classList.add('active');
+          
+          // Atualiza o menu ativo
+          if (this.classList.contains('nav-links a')) {
+            document.querySelector('.nav-links a.active').classList.remove('active');
+            this.classList.add('active');
+          }
           
           const targetId = this.getAttribute('href');
           const targetSection = document.querySelector(targetId);
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-
-      // Controle de expansão dos cards de preço
-      document.querySelectorAll('.price-card').forEach(card => {
-        card.addEventListener('click', function() {
-          // Remove a classe expanded de todos os outros cards
-          document.querySelectorAll('.price-card').forEach(c => {
-            if (c !== this) c.classList.remove('expanded');
+          
+          // Scroll suave até a seção
+          targetSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
           });
-          // Toggle a classe expanded no card clicado
-          this.classList.toggle('expanded');
-        });
-      });
-
-      // Controle de expansão dos cards de serviço
-      document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('click', function() {
-          // Remove a classe expanded de todos os outros cards
-          document.querySelectorAll('.service-card').forEach(c => {
-            if (c !== this) c.classList.remove('expanded');
-          });
-          // Toggle a classe expanded no card clicado
-          this.classList.toggle('expanded');
         });
       });
 
@@ -388,6 +444,29 @@
             scrollToSection(index);
           }
         }
+      });
+
+      // Toggle entre Planos e Avulsos
+      document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const priceCards = document.querySelector('.price-cards');
+          const singleServices = document.querySelector('.single-services');
+          
+          // Remove active de todos os botões
+          document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+          
+          // Adiciona active no botão clicado
+          this.classList.add('active');
+          
+          // Determina qual conteúdo mostrar baseado no botão clicado
+          if (this.getAttribute('data-target') === 'single') {
+            priceCards.classList.remove('active');
+            singleServices.classList.add('active');
+          } else {
+            singleServices.classList.remove('active');
+            priceCards.classList.add('active');
+          }
+        });
       });
     </script>
   </body>
